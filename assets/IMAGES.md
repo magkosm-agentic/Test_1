@@ -10,7 +10,7 @@ the debrief slide carries the credit line). A slot whose file is missing renders
 | `hitler.jpg` | Bundesarchiv Bild 183-S33882, Adolf Hitler retouched.jpg | Bundesarchiv, CC BY-SA 3.0 DE | Cast, Hitler vanishes |
 | `stalin.jpg` | Stalin Potsdam 1945 (cropped).jpg | US Army Signal Corps, public domain | Cast |
 | `dornberger.jpg` | Bundesarchiv Bild 146-1980-009-33, Walter Dornberger.jpg | Bundesarchiv, CC BY-SA 3.0 DE | Cast |
-| `von-braun.jpg` | Wernher von Braun.jpg (not yet added) | NASA, public domain | Cast, Paperclip |
+| `von-braun.jpg` | Wernher von Braun.jpg | NASA, public domain | Cast, Paperclip |
 | `debus.jpg` | Kurt H. Debus.jpg | NASA, public domain | Cast, Paperclip |
 | `rudolph.jpg` | Arthur Rudolph.jpg | NASA, public domain | Cast, Paperclip |
 | `strughold.jpg` | Hubertus Strughold (cropped).jpg | US Air Force, public domain | Paperclip |
@@ -24,5 +24,3 @@ the debrief slide carries the credit line). A slot whose file is missing renders
 | `cernan.jpg` | Apollo 17 Astronaut Cernan Adjusts U.S. Flag on Lunar Surface (5052744448).jpg | NASA, public domain | Then nobody went back |
 | `highjump.jpg` | USS Philippine Sea (CV-47) transporting Douglas R4D aircraft to Antarctica, 8 January 1947 (80-G-K-7623).jpg | US Navy, public domain | Underground (background) |
 
-To add the missing portrait: download https://commons.wikimedia.org/wiki/File:Wernher_von_Braun.jpg
-and save it as `von-braun.jpg` here.
