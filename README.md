@@ -14,7 +14,7 @@ no server. The stage is a fixed 1920×1080 canvas scaled to the window, so prese
 | `→` `space` click | next step or slide |
 | `←` | back |
 | `N` | speaker notes with cue times |
-| `A` | autoplay, paced to about 6 minutes |
+| `A` | autoplay, paced to about 6½ minutes |
 | `T` | jump to the debrief slide (what was real, what was invented) |
 | `R` | restart and reset the clock |
 | `F` | fullscreen |
@@ -32,7 +32,8 @@ not on file" card, so the deck presents cleanly with a partial set.
 ## Structure
 
 1. Cover
-2. The cast: Hitler, Stalin, Dornberger, von Braun, Debus, Rudolph
+2. The vehicles: V-2 and Saturn V to scale, and the two Vs
+3. The cast: Hitler, Stalin, Dornberger, von Braun, Debus, Rudolph
 3. Peenemünde, 3 October 1942: the V-2 reaches 84.5 km
 4. The weapon: 3,000 fired, 9,000 killed, 12,000 dead building it underground
 5. Hitler vanishes: Zhukov, Stalin and the FBI file

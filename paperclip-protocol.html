@@ -129,6 +129,30 @@ h2{font-size:130px}
 #s1 .rule{width:0;height:5px;background:var(--amber);margin:40px 0 0;transition:width 1.4s ease .9s}
 #s1.active .rule{width:520px}
 
+/* ---------- vehicles ---------- */
+.veh{display:grid;grid-template-columns:1fr 330px 1fr;gap:36px;margin-top:24px;align-items:start}
+.vcard{background:rgba(18,22,34,.92);border:1px solid var(--line);padding:22px 30px 22px}
+.vcard .yr{font-family:var(--type);font-size:22px;letter-spacing:.16em;color:var(--amber)}
+.vcard .nm{font-family:var(--display);font-weight:900;font-size:104px;line-height:1;text-transform:uppercase;margin:6px 0 14px;white-space:nowrap}
+.vv{position:relative;display:inline-block}
+.vv svg{position:absolute;left:-32%;top:-18%;width:164%;height:136%;overflow:visible;pointer-events:none}
+.vv path{fill:none;stroke:var(--red);stroke-width:7;stroke-linecap:round;stroke-dasharray:520;stroke-dashoffset:520;filter:drop-shadow(0 0 6px rgba(201,53,44,.5))}
+.vv.on path{animation:draw-v .9s ease-out forwards}
+.vv.on svg:nth-of-type(2) path{animation-delay:.5s}
+@keyframes draw-v{to{stroke-dashoffset:0}}
+.spec{display:grid;grid-template-columns:auto 1fr;column-gap:18px;row-gap:6px;font-size:22px;line-height:1.3}
+.spec dt{font-family:var(--type);font-size:17px;letter-spacing:.1em;color:var(--paper-dim);padding-top:4px;white-space:nowrap}
+.spec dd{margin:0;color:var(--paper)}
+.spec dd b{color:var(--amber);font-weight:500}
+.scale{position:relative;height:460px;margin-top:10px}
+.scale svg{width:100%;height:100%;overflow:visible}
+.scale .hull{fill:#d9d2bd;stroke:#0a0c12;stroke-width:1.5}
+.scale .dark{fill:#3a3f4c}
+.scale .flame{fill:var(--amber)}
+.scale text{font-family:var(--type);font-size:18px;fill:var(--paper-dim);letter-spacing:.08em}
+.scale .big{font-size:26px;fill:var(--amber)}
+.scale .dim{stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 6}
+
 /* ---------- cast ---------- */
 .cast{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;margin-top:36px}
 .who{display:flex;flex-direction:column}
@@ -297,10 +321,78 @@ body.showhelp #help{display:flex}
   <aside class="notes">[0:00] Open on the title. Let the stamp land. "Tonight's story starts with a rocket, ends on the far side of the Moon, and every date in it is real. The conclusion is mine. You'll see where the facts stop and I start."</aside>
 </section>
 
+<!-- 1b · THE VEHICLES -->
+<section class="slide" id="s1b" data-dur="26">
+  <p class="eyebrow">The vehicles · 1942 → 1967 · same designer</p>
+  <h2 style="font-size:88px">One designer. Two rockets.</h2>
+  <div class="veh">
+    <div class="vcard frag">
+      <div class="yr">PEENEMÜNDE · FIRST FLIGHT 1942</div>
+      <div class="nm"><span class="vv">V<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M12 52 C 8 14, 86 6, 92 46 C 97 86, 14 98, 8 58 C 4 26, 58 6, 88 22"/></svg></span>-2</div>
+      <dl class="spec">
+        <dt>NAME</dt><dd>Aggregat 4, renamed <b>Vergeltungswaffe 2</b>: "retaliation weapon"</dd>
+        <dt>HEIGHT</dt><dd><b>14 m</b></dd>
+        <dt>MASS</dt><dd><b>12.5 t</b>, one engine, ethanol + liquid oxygen</dd>
+        <dt>THRUST</dt><dd><b>25 t</b></dd>
+        <dt>CEILING</dt><dd><b>176 km</b>, the first object in space</dd>
+        <dt>DESIGNER</dt><dd>Wernher von Braun</dd>
+        <dt>BUILT BY</dt><dd>Prisoners, underground, Mittelwerk</dd>
+      </dl>
+    </div>
+    <div class="scale frag">
+      <svg viewBox="0 0 420 560" aria-label="V-2 and Saturn V drawn to the same scale: 14 metres against 110 metres">
+        <line class="dim" x1="40" y1="530" x2="400" y2="530"/>
+        <!-- V-2: 14 m = 63 px -->
+        <g transform="translate(95,467)">
+          <path class="hull" d="M0 0 L -4 8 L -4 56 L -10 63 L 10 63 L 4 56 L 4 8 Z"/>
+          <path class="flame" d="M-3 63 L 0 72 L 3 63 Z"/>
+        </g>
+        <text x="95" y="440" text-anchor="middle">V-2</text>
+        <text class="big" x="95" y="415" text-anchor="middle">14 m</text>
+        <!-- Saturn V: 110.6 m = 500 px -->
+        <g transform="translate(280,30)">
+          <rect class="hull" x="-23" y="330" width="46" height="170"/>
+          <rect class="dark" x="-23" y="420" width="46" height="18"/>
+          <rect class="hull" x="-23" y="200" width="46" height="130"/>
+          <rect class="dark" x="-23" y="200" width="46" height="12"/>
+          <path class="hull" d="M-23 200 L -15 190 L 15 190 L 23 200 Z"/>
+          <rect class="hull" x="-15" y="110" width="30" height="80"/>
+          <rect class="dark" x="-15" y="150" width="30" height="8"/>
+          <path class="hull" d="M-15 110 L -9 92 L 9 92 L 15 110 Z"/>
+          <rect class="hull" x="-9" y="56" width="18" height="36"/>
+          <path class="hull" d="M-9 56 L 0 30 L 9 56 Z"/>
+          <rect class="hull" x="-1.5" y="0" width="3" height="30"/>
+          <path class="dark" d="M-30 500 L -23 480 L -23 500 Z M30 500 L 23 480 L 23 500 Z"/>
+          <path class="flame" d="M-20 500 L -14 522 L -8 500 Z M-6 500 L 0 526 L 6 500 Z M8 500 L 14 522 L 20 500 Z"/>
+        </g>
+        <text x="280" y="555" text-anchor="middle">SATURN V</text>
+        <text class="big" x="235" y="60" text-anchor="end">110.6 m</text>
+        <text x="235" y="84" text-anchor="end">8× taller</text>
+        <text x="235" y="106" text-anchor="end">240× heavier</text>
+      </svg>
+    </div>
+    <div class="vcard frag">
+      <div class="yr">CAPE KENNEDY · FIRST FLIGHT 1967</div>
+      <div class="nm">Saturn <span class="vv">V<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M12 52 C 8 14, 86 6, 92 46 C 97 86, 14 98, 8 58 C 4 26, 58 6, 88 22"/></svg></span></div>
+      <dl class="spec">
+        <dt>NAME</dt><dd>The V is the Roman numeral five. <span class="lie">Officially.</span></dd>
+        <dt>HEIGHT</dt><dd><b>110.6 m</b></dd>
+        <dt>MASS</dt><dd><b>2,970 t</b>, five F-1 engines, kerosene + liquid oxygen</dd>
+        <dt>THRUST</dt><dd><b>3,500 t</b></dd>
+        <dt>RECORD</dt><dd><b>13 launches, 13 successes</b></dd>
+        <dt>DESIGNER</dt><dd>Wernher von Braun</dd>
+        <dt>BUILT BY</dt><dd>Debus launching, Rudolph directing</dd>
+      </dl>
+    </div>
+  </div>
+  <p class="lede frag" data-vcircle="1" style="margin-top:22px;font-size:32px;max-width:1600px">Twenty-five years apart. Same man, same fuel, same shape. <i class="lie">And the same letter on the side.</i></p>
+  <aside class="notes">[0:18] Build the V-2 card, then Saturn V, then the scale drawing: 14 metres against 110. Last click circles the two Vs. "Vergeltung means retaliation. Saturn V, we're told, is a Roman numeral." Let the circles finish before you move on.</aside>
+</section>
+
 <!-- 2 · THE CAST -->
 <section class="slide" id="s2" data-dur="22">
   <p class="eyebrow">Dramatis personae · Remember these faces</p>
-  <h2 style="font-size:100px">Six men. One rocket. One Moon.</h2>
+  <h2 style="font-size:100px">Six men. Two rockets. One Moon.</h2>
   <div class="cast">
     <div class="who frag"><div class="slot" data-ini="AH"><img src="assets/hitler.jpg" alt="Adolf Hitler, portrait, 1938" style="object-position:50% 0"></div><div class="nm">Adolf Hitler</div><div class="rl"><b>Führer.</b> Officially dead in Berlin, <span class="amber">30 April 1945.</span> Body never shown.</div></div>
     <div class="who frag"><div class="slot" data-ini="JS"><img src="assets/stalin.jpg" alt="Joseph Stalin at Potsdam, July 1945"></div><div class="nm">Joseph Stalin</div><div class="rl"><b>Soviet leader.</b> Took Berlin. Told Truman that Hitler was alive.</div></div>
@@ -309,7 +401,7 @@ body.showhelp #help{display:flex}
     <div class="who frag"><div class="slot" data-ini="KD"><img src="assets/debus.jpg" alt="Kurt Debus, NASA portrait"></div><div class="nm">Kurt Debus</div><div class="rl"><b>SS member.</b> Launched V-2s. Later: launched every Apollo.</div></div>
     <div class="who frag"><div class="slot" data-ini="AR"><img src="assets/rudolph.jpg" alt="Arthur Rudolph, NASA portrait"></div><div class="nm">Arthur Rudolph</div><div class="rl"><b>Mittelwerk operations director.</b> Later: Saturn V project director.</div></div>
   </div>
-  <aside class="notes">[0:18] Step through the six faces fast. "Two dictators, four engineers. Keep the four engineers in mind: they appear on both ends of this story." Hitler and Stalin are the leads; the rest are the crew.</aside>
+  <aside class="notes">[0:44] Step through the six faces fast. "Two dictators, four engineers. Keep the four engineers in mind: they appear on both ends of this story." Hitler and Stalin are the leads; the rest are the crew.</aside>
 </section>
 
 <!-- 3 · PEENEMÜNDE -->
@@ -629,7 +721,7 @@ body.showhelp #help{display:flex}
 <div class="scan"></div>
 <div class="grain"></div>
 <div class="chrome top"><span>DOSSIER // <b>PAPERCLIP</b></span><span id="counter">01 / 15</span></div>
-<div class="chrome bottom"><span><span id="auto">● AUTO&nbsp;&nbsp;</span>PRESS <b>?</b> FOR KEYS</span><span id="timer">0:00 <span class="dim">/ 6:00</span></span></div>
+<div class="chrome bottom"><span><span id="auto">● AUTO&nbsp;&nbsp;</span>PRESS <b>?</b> FOR KEYS</span><span id="timer">0:00 <span class="dim">/ 6:30</span></span></div>
 <div id="hint">→ BEGIN · N NOTES · A AUTOPLAY · T DEBRIEF</div>
 <div id="progress"></div>
 <div id="notes"><div class="t">SPEAKER NOTES</div><div id="notetext"></div></div>
@@ -637,7 +729,7 @@ body.showhelp #help{display:flex}
 <tr><td>→ space click</td><td>next step or slide</td></tr>
 <tr><td>←</td><td>back</td></tr>
 <tr><td>N</td><td>speaker notes with timings</td></tr>
-<tr><td>A</td><td>autoplay, paced to about 6 minutes</td></tr>
+<tr><td>A</td><td>autoplay, paced to about 6½ minutes</td></tr>
 <tr><td>T</td><td>jump to the debrief slide (what was real)</td></tr>
 <tr><td>R</td><td>restart and reset the clock</td></tr>
 <tr><td>F</td><td>fullscreen</td></tr>
@@ -652,7 +744,7 @@ body.showhelp #help{display:flex}
   var visible=slides.filter(function(s){return !s.dataset.hidden});
   var cur=0, startTime=null, autoTimer=null, auto=false;
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var TARGET='6:00';
+  var TARGET='6:30';
 
   /* fit stage to viewport */
   function fit(){var s=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform='translate(-50%,-50%) scale('+s+')';}
@@ -712,6 +804,7 @@ body.showhelp #help{display:flex}
     s.querySelectorAll('.type').forEach(resetType);
     s.querySelectorAll('.count').forEach(function(c){if(!c.closest('.frag')||showAll)runCount(c);});
     var moon=s.querySelector('#moon');if(moon)moon.classList.toggle('flip',!!showAll);
+    s.querySelectorAll('.vv').forEach(function(v){v.classList.toggle('on',!!showAll);});
     var fill=s.querySelector('.tl .fill');if(fill)fill.style.width=showAll?'100%':'0';
     s.querySelectorAll('.type:not(.frag)').forEach(function(t){setTimeout(function(){if(s.classList.contains('active'))runType(t);},400);});
     var am=s.querySelector('animateMotion');if(am){setTimeout(function(){try{am.beginElement();}catch(e){}},500);}
@@ -727,6 +820,7 @@ body.showhelp #help{display:flex}
     if(f&&f.classList.contains('type'))runType(f);
     if(f)f.querySelectorAll('.count').forEach(runCount);
     if(f&&f.dataset.flip){var m=s.querySelector('#moon');if(m)m.classList.add('flip');}
+    if(f&&f.dataset.vcircle)s.querySelectorAll('.vv').forEach(function(v){v.classList.add('on');});
     var evs=s.querySelectorAll('.ev');if(evs.length){var on=s.querySelectorAll('.ev.on').length;var fill=s.querySelector('.tl .fill');if(fill&&on)fill.style.width=parseFloat(evs[on-1].style.left)+'%';}
     if(s.dataset.board){var polas=s.querySelectorAll('.pola.on').length;s.querySelectorAll('.str').forEach(function(p){if(polas>=+p.dataset.need)p.classList.add('on');});}
     if(s.dataset.chain){var links=s.querySelectorAll('.link.on').length;if(links>=6)s.querySelector('.str').classList.add('on');}
@@ -740,7 +834,7 @@ body.showhelp #help{display:flex}
   }
   function prev(){
     var s=visible[cur],on=s.querySelectorAll('.frag.on');
-    if(on.length&&!s.dataset.hidden){var f=on[on.length-1];f.classList.remove('on');if(f.dataset.flip){var m=s.querySelector('#moon');if(m)m.classList.remove('flip');}if(f.classList.contains('type'))resetType(f);
+    if(on.length&&!s.dataset.hidden){var f=on[on.length-1];f.classList.remove('on');if(f.dataset.flip){var m=s.querySelector('#moon');if(m)m.classList.remove('flip');}if(f.dataset.vcircle)s.querySelectorAll('.vv').forEach(function(v){v.classList.remove('on');});if(f.classList.contains('type'))resetType(f);
       var evs=s.querySelectorAll('.ev');if(evs.length){var n=s.querySelectorAll('.ev.on').length;var fill=s.querySelector('.tl .fill');if(fill)fill.style.width=n?parseFloat(evs[n-1].style.left)+'%':'0';}
       return;}
     if(cur>0)activate(cur-1,true);
@@ -748,7 +842,7 @@ body.showhelp #help{display:flex}
 
   /* timer */
   function tickTimer(){var el=document.getElementById('timer');if(startTime===null){el.innerHTML='0:00 <span class="dim">/ '+TARGET+'</span>';return;}
-    var e=Math.floor((Date.now()-startTime)/1000);var m=Math.floor(e/60),s=e%60;el.innerHTML=m+':'+(s<10?'0':'')+s+' <span class="dim">/ '+TARGET+'</span>';el.classList.toggle('over',e>390);}
+    var e=Math.floor((Date.now()-startTime)/1000);var m=Math.floor(e/60),s=e%60;el.innerHTML=m+':'+(s<10?'0':'')+s+' <span class="dim">/ '+TARGET+'</span>';el.classList.toggle('over',e>420);}
   setInterval(tickTimer,500);
 
   /* autoplay: reveal fragments evenly across the slide's duration, then advance */
