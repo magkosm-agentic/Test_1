@@ -14,30 +14,40 @@ no server. The stage is a fixed 1920×1080 canvas scaled to the window, so prese
 | `→` `space` click | next step or slide |
 | `←` | back |
 | `N` | speaker notes with cue times |
-| `A` | autoplay, paced to about 5½ minutes |
+| `A` | autoplay, paced to about 6 minutes |
 | `T` | jump to the debrief slide (what was real, what was invented) |
 | `R` | restart and reset the clock |
 | `F` | fullscreen |
 | `?` | key help |
 
-The clock in the bottom-right starts on your first advance and turns red past six minutes.
+The clock in the bottom-right starts on your first advance and turns red past six and a half minutes.
+
+## Photos
+
+The deck references sixteen historical photographs under `assets/` (portraits of the cast, the V-2
+launch, the Mittelwerk tunnels, the Moon's two faces, and so on). They are not in the repository:
+`assets/IMAGES.md` lists each file name, the exact Wikimedia Commons image to download for it, and
+its licence. Any slot whose file is missing renders as a labelled "archive photo, not on file" card,
+so the deck presents cleanly with none, some, or all of them in place.
 
 ## Structure
 
 1. Cover
-2. Peenemünde, 3 October 1942: the V-2 reaches 84.5 km
-3. The weapon: 3,000 fired, 9,000 killed, 12,000 dead building it
-4. The vanishing: Zhukov, Stalin and the FBI file
-5. Two boats: U-530 and U-977 reach Argentina
-6. The skull: the 2009 DNA result and Operation Archive
-7. Paperclip: von Braun, Debus, Rudolph, Strughold
-8. The novel: "Elon"
-9. The race: Sputnik to the N1
-10. Six landings, one side: Apollo, Project A119, Project Horizon
-11. December 1972 to January 2019: 16,821 days
-12. Pull the thread
-13. The quietest place
-14. Debrief (hidden; press `T`)
+2. The cast: Hitler, Stalin, Dornberger, von Braun, Debus, Rudolph
+3. Peenemünde, 3 October 1942: the V-2 reaches 84.5 km
+4. The weapon: 3,000 fired, 9,000 killed, 12,000 dead building it underground
+5. Hitler vanishes: Zhukov, Stalin and the FBI file
+6. Two boats: U-530 and U-977 reach Argentina
+7. The skull: the 2009 DNA result and Operation Archive
+8. Paperclip: "They didn't lose the space race. They ran it."
+9. The novel: "Elon"
+10. The race: Sputnik to the N1
+11. Six landings, one side: Apollo, Project A119, Project Horizon
+12. Underground: Nordhausen, Argentina, Antarctica, and then up
+13. December 1972 to January 2019: 16,821 days, "it was reserved"
+14. Pull the thread
+15. They went underground. Then they went up.
+16. Debrief (hidden; press `T`)
 
 Edit the text directly in the HTML. Each slide is a `<section class="slide">`; anything with
 `class="frag"` reveals on the next keypress; `data-dur` is the slide's autoplay length in seconds;
