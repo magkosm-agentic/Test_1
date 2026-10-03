@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The Paperclip Protocol</title>
+<title>Operation Paperclip</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Special+Elite&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <style>
 /* Layout: a fixed 1920x1080 stage scaled to the viewport; each slide is a full-bleed scene,
@@ -71,7 +71,7 @@ body.sky #stars{opacity:1}
 #progress{position:absolute;left:0;bottom:0;height:6px;width:0;background:var(--amber);transition:width .6s ease;box-shadow:0 0 18px var(--amber)}
 #timer{font-variant-numeric:tabular-nums}
 #timer.over{color:var(--red)}
-#auto{display:none;color:var(--red)}
+#auto{display:none;color:var(--amber)}
 body.autoplay #auto{display:inline}
 #hint{position:absolute;left:50%;bottom:40px;transform:translateX(-50%);font-family:var(--type);font-size:20px;letter-spacing:.14em;color:var(--paper-dim);opacity:.8;pointer-events:none;transition:opacity .5s}
 
@@ -87,6 +87,7 @@ h1{font-size:230px}
 h2{font-size:130px}
 .lede{font-size:40px;line-height:1.35;max-width:1100px;margin:0;color:var(--paper)}
 .lede i{color:var(--amber);font-style:italic}
+.lie,.lede i.lie{color:var(--red);font-style:italic}
 .small{font-size:28px;line-height:1.4;color:var(--paper-dim)}
 .tt{font-family:var(--type)}
 .red{color:var(--red)}
@@ -103,6 +104,7 @@ h2{font-size:130px}
 
 /* stamp */
 .stamp{display:inline-block;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:64px;letter-spacing:.06em;color:var(--red);border:7px solid var(--red);border-radius:12px;padding:6px 26px 2px;transform:rotate(-8deg);opacity:0;white-space:nowrap;box-shadow:inset 0 0 30px rgba(10,12,18,.55)}
+.stamp.fact{color:var(--amber);border-color:var(--amber)}
 .stamp.on,.active .stamp.auto{animation:slam .55s cubic-bezier(.2,1.4,.3,1) forwards}
 @keyframes slam{0%{opacity:0;transform:rotate(-8deg) scale(3.2)}60%{opacity:1;transform:rotate(-8deg) scale(.92)}100%{opacity:1;transform:rotate(-8deg) scale(1)}}
 
@@ -160,9 +162,9 @@ h2{font-size:130px}
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin:36px 0 36px}
 .tile{background:var(--ink-2);border:1px solid var(--line);padding:30px 40px 26px;position:relative;overflow:hidden}
 .tile::before{content:'';position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--amber)}
-.tile.red::before{background:var(--red)}
+.tile.red::before{background:var(--amber)}
 .tile .n{font-family:var(--display);font-weight:900;font-size:120px;line-height:.9;color:var(--paper);font-variant-numeric:tabular-nums}
-.tile.red .n{color:var(--red)}
+.tile.red .n{color:var(--amber)}
 .tile .l{font-size:26px;color:var(--paper-dim);margin-top:12px;line-height:1.3}
 
 /* ---------- telex ---------- */
@@ -198,18 +200,18 @@ h2{font-size:130px}
 .pola .ph.missing img{display:none}
 .pola .nm{font-family:var(--type);font-size:26px;margin:14px 0 4px;line-height:1.1}
 .pola .was{font-size:19px;line-height:1.3;color:#5a4a2a}
-.pola .was b{color:#9b1e1e;font-weight:600}
+.pola .was b{color:#7a5416;font-weight:600}
 .pin{position:absolute;left:50%;top:-10px;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ff8a80,#8e1b14);transform:translateX(-50%);box-shadow:0 3px 6px rgba(0,0,0,.6)}
 
 /* ---------- timeline ---------- */
 .tl{position:relative;height:430px;margin-top:30px}
 .tl .bar{position:absolute;left:0;right:0;top:210px;height:4px;background:var(--line)}
 .tl .fill{position:absolute;left:0;top:210px;height:4px;width:0;background:var(--amber);transition:width 1.1s ease}
-.ev{position:absolute;top:0;height:430px;width:320px;transform:translateX(-50%)}
+.ev{position:absolute;top:0;height:430px;width:230px;transform:translateX(-50%)}
 .ev .dot{width:26px;height:26px;border-radius:50%;background:var(--amber);border:5px solid var(--ink);box-shadow:0 0 0 3px var(--amber);position:absolute;left:50%;top:197px;transform:translateX(-50%)}
-.ev.bad .dot{background:var(--red);box-shadow:0 0 0 3px var(--red)}
-.ev .yr{font-family:var(--display);font-weight:900;font-size:64px;line-height:1;text-align:center;white-space:nowrap}
-.ev .tx{font-size:24px;line-height:1.35;color:var(--paper-dim);text-align:center;margin-top:8px}
+.ev.bad .dot{background:var(--paper-dim);box-shadow:0 0 0 3px var(--paper-dim)}
+.ev .yr{font-family:var(--display);font-weight:900;font-size:56px;line-height:1;text-align:center;white-space:nowrap}
+.ev .tx{font-size:22px;line-height:1.35;color:var(--paper-dim);text-align:center;margin-top:8px}
 .ev.up .inner{position:absolute;bottom:250px;left:0;right:0}
 .ev.down .inner{position:absolute;top:250px;left:0;right:0}
 
@@ -220,18 +222,19 @@ h2{font-size:130px}
 .face{position:absolute;inset:0;border-radius:50%;backface-visibility:hidden;overflow:hidden;box-shadow:inset -60px -40px 120px rgba(0,0,0,.7),0 0 80px rgba(240,168,50,.12)}
 .face .tex{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%}
 .face .tex.missing{display:none}
+.face .tex:not(.missing)~.mare,.face .tex:not(.missing)~.crater{display:none}
 .near{background:radial-gradient(circle at 40% 35%,#e6e1d4,#b6b0a3 70%,#8e897d)}
 .mare{position:absolute;border-radius:50%;background:#6f6b63;filter:blur(14px);opacity:.75;transform:translate(-50%,-50%)}
 .far{transform:rotateY(180deg);background:radial-gradient(circle at 60% 40%,#8f8b84,#5d5a55 70%,#3a3834)}
 .crater{position:absolute;border-radius:50%;background:radial-gradient(circle at 40% 40%,#6a6660,#3f3d39 70%);box-shadow:inset 3px 3px 8px rgba(255,255,255,.12),inset -4px -4px 10px rgba(0,0,0,.5);transform:translate(-50%,-50%)}
 .site{position:absolute;transform:translate(-50%,-50%);opacity:0;transition:opacity .4s}
 .site.on{opacity:1}
-.site::before{content:'';display:block;width:18px;height:18px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(201,53,44,.35),0 0 14px var(--red)}
+.site::before{content:'';display:block;width:18px;height:18px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(240,168,50,.35),0 0 14px var(--amber)}
 .site span{position:absolute;left:24px;top:-6px;font-family:var(--type);font-size:20px;color:#1a1710;background:rgba(240,234,216,.9);padding:2px 8px;white-space:nowrap}
-.farlabel{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--display);font-weight:900;font-size:60px;line-height:1;color:var(--paper);text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.farlabel{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle,rgba(10,12,18,.8) 0%,rgba(10,12,18,.55) 35%,transparent 68%);font-family:var(--display);font-weight:900;font-size:60px;line-height:1;color:var(--paper);text-shadow:0 2px 12px rgba(0,0,0,.8)}
 .farlabel small{display:block;font-family:var(--type);font-weight:400;font-size:24px;letter-spacing:.2em;margin-top:10px;color:var(--amber)}
 .facts{display:flex;flex-direction:column;gap:20px;margin-top:26px}
-.fact{border-left:5px solid var(--red);padding:6px 0 6px 26px;font-size:26px;line-height:1.4;color:var(--paper)}
+.fact{border-left:5px solid var(--amber);padding:6px 0 6px 26px;font-size:26px;line-height:1.4;color:var(--paper)}
 .fact b{font-family:var(--type);font-weight:400;color:var(--amber);letter-spacing:.06em}
 
 /* ---------- underground ---------- */
@@ -246,7 +249,6 @@ h2{font-size:130px}
 .chain{display:grid;grid-template-columns:repeat(6,1fr);gap:28px;margin-top:70px;position:relative}
 .link{background:var(--ink-2);border:1px solid var(--line);padding:30px 26px;min-height:300px;position:relative}
 .link .yr{font-family:var(--display);font-weight:900;font-size:76px;line-height:1;color:var(--amber)}
-.link.red .yr{color:var(--red)}
 .link .tx{font-size:25px;line-height:1.35;color:var(--paper);margin-top:14px}
 .chain svg{position:absolute;left:0;right:0;top:-40px;height:60px;width:100%;overflow:visible}
 .chain .str{stroke:var(--string);stroke-width:4;fill:none;stroke-dasharray:2000;stroke-dashoffset:2000}
@@ -288,9 +290,9 @@ body.showhelp #help{display:flex}
 <!-- 1 · COVER -->
 <section class="slide" id="s1" data-dur="18">
   <div class="over">DOSSIER 1942 — 2019 · EYES ONLY</div>
-  <h1><span><i>The</i></span><span><i>Paperclip</i></span><span><i>Protocol</i></span></h1>
+  <h1><span><i>Operation</i></span><span><i>Paperclip</i></span></h1>
   <div class="rule"></div>
-  <p class="sub">The Third Reich did not lose the space race. <i>It went underground.</i></p>
+  <p class="sub">The Third Reich did not lose the space race. <i class="lie">It went underground.</i></p>
   <div class="stamp auto">Conspiracy night</div>
   <aside class="notes">[0:00] Open on the title. Let the stamp land. "Tonight's story starts with a rocket, ends on the far side of the Moon, and every date in it is real. The conclusion is mine. You'll see where the facts stop and I start."</aside>
 </section>
@@ -300,7 +302,7 @@ body.showhelp #help{display:flex}
   <p class="eyebrow">Dramatis personae · Remember these faces</p>
   <h2 style="font-size:100px">Six men. One rocket. One Moon.</h2>
   <div class="cast">
-    <div class="who frag"><div class="slot" data-ini="AH"><img src="assets/hitler.jpg" alt="Adolf Hitler, portrait, 1938"></div><div class="nm">Adolf Hitler</div><div class="rl"><b>Führer.</b> Officially dead in Berlin, <span class="red">30 April 1945.</span> Body never shown.</div></div>
+    <div class="who frag"><div class="slot" data-ini="AH"><img src="assets/hitler.jpg" alt="Adolf Hitler, portrait, 1938"></div><div class="nm">Adolf Hitler</div><div class="rl"><b>Führer.</b> Officially dead in Berlin, <span class="amber">30 April 1945.</span> Body never shown.</div></div>
     <div class="who frag"><div class="slot" data-ini="JS"><img src="assets/stalin.jpg" alt="Joseph Stalin at Potsdam, July 1945"></div><div class="nm">Joseph Stalin</div><div class="rl"><b>Soviet leader.</b> Took Berlin. Told Truman that Hitler was alive.</div></div>
     <div class="who frag"><div class="slot" data-ini="WD"><img src="assets/dornberger.jpg" alt="Walter Dornberger, Major-General, head of the V-2 programme"></div><div class="nm">Walter Dornberger</div><div class="rl"><b>Major-General.</b> Ran the V-2 programme. Later: Bell Aircraft, USA.</div></div>
     <div class="who frag"><div class="slot" data-ini="WvB"><img src="assets/von-braun.jpg" alt="Wernher von Braun, NASA portrait"></div><div class="nm">Wernher von Braun</div><div class="rl"><b>SS-Sturmbannführer.</b> Designed the V-2. Later: designed the Saturn V.</div></div>
@@ -396,8 +398,8 @@ body.showhelp #help{display:flex}
     </svg>
     <div class="cards">
       <div class="card frag"><h3>U-530</h3><p>Surrenders at Mar del Plata, Argentina, <b>10 July 1945</b>. Two months after Germany. Commander Otto Wermuth has dumped the ship's log overboard. Asked why he came, he never gives an answer the Argentines accept.</p></div>
-      <div class="card frag"><h3>U-977</h3><p>Surrenders at Mar del Plata, <b>17 August 1945</b>. Left Norway the day Berlin fell. <b>66 days</b> underwater on snorkel without surfacing, the longest of the war. Cargo manifest: none.</p></div>
-      <p class="lede frag" style="font-size:34px">Both captains are flown to Washington for questioning. The transcripts have never been released.</p>
+      <div class="card frag"><h3>U-977</h3><p>Surrenders at Mar del Plata, <b>17 August 1945</b>. Left Norway the day Berlin fell. <b>66 days</b> underwater on snorkel without surfacing, the longest of the war. <span class="lie">Cargo manifest: none.</span></p></div>
+      <p class="lede frag" style="font-size:34px">Both captains are questioned by the Americans. <i class="lie">The transcripts have never been released.</i></p>
     </div>
   </div>
   <aside class="notes">[1:52] Two U-boats really did turn up in Argentina months after the surrender, and the 66-day snorkel run is documented. Keep it dry; the facts carry it. The last line about transcripts is the first piece of connective tissue; deliver it like a fact.</aside>
@@ -411,11 +413,11 @@ body.showhelp #help{display:flex}
       <h2>The skull</h2>
       <p class="lede" style="margin-top:30px;font-size:36px">For sixty years the Soviets held the proof: a fragment of skull with a bullet hole, recovered from the Chancellery garden. In 2000 they put it on public display.</p>
       <p class="lede frag" style="margin-top:24px;font-size:36px">In 2009, archaeologist Nick Bellantoni of the University of Connecticut was allowed to take a sample. The DNA came back.</p>
-      <div class="stamp frag" style="margin-top:36px;font-size:74px">Female · age 20 – 40</div>
+      <div class="stamp fact frag" style="margin-top:36px;font-size:74px">Female · age 20 – 40</div>
     </div>
     <div>
       <div class="frag"><div class="slot" style="height:300px" data-ini="FB"><img src="assets/bunker.jpg" alt="Entrance to the Führerbunker in the Reich Chancellery garden, Berlin, 1947"></div><div class="cap">REICH CHANCELLERY GARDEN · THE BUNKER EXIT · 1947</div></div>
-      <div class="card frag" style="border-left:6px solid var(--red);margin-top:26px"><h3 style="font-size:44px">1970 · Operation Archive</h3><p>The KGB digs up the remains buried at its Magdeburg base, burns them, grinds the ash and tips it into the Biederitz river.</p></div>
+      <div class="card frag" style="border-left:6px solid var(--amber);margin-top:26px"><h3 style="font-size:44px">1970 · Operation Archive</h3><p>The KGB digs up the remains buried at its Magdeburg base, burns them, grinds the ash and tips it into the Biederitz river.</p></div>
       <p class="lede frag" style="margin-top:26px;font-size:36px">The one piece of evidence the world was ever shown is not Hitler. Everything else is in a river.</p>
     </div>
   </div>
@@ -426,7 +428,7 @@ body.showhelp #help{display:flex}
 <section class="slide" id="s8" data-dur="26" data-board="1">
   <div class="bg bottom"><img src="assets/paperclip-group.jpg" alt=""></div>
   <p class="eyebrow">Operation Paperclip · 1945 — 1959 · 1,600 German scientists, one paperclip on each file</p>
-  <h2 style="font-size:100px">They didn't lose the space race. <span class="amber">They ran it.</span></h2>
+  <h2 style="font-size:100px">They didn't lose the space race. <span class="red">They ran it.</span></h2>
   <div class="board">
     <svg viewBox="0 0 1640 650" preserveAspectRatio="none" aria-label="Red string connecting four personnel cards">
       <path class="str" data-need="2" d="M205 60 C 350 180, 470 180, 615 90"/>
@@ -459,19 +461,21 @@ body.showhelp #help{display:flex}
 </section>
 
 <!-- 10 · THE RACE -->
-<section class="slide" id="s10" data-dur="26">
-  <p class="eyebrow">The race · 1957 — 1972</p>
-  <h2 style="font-size:96px">First to everything. Except one thing.</h2>
+<section class="slide" id="s10" data-dur="30">
+  <p class="eyebrow">The race · 1957 — 1972 · The Soviet problem</p>
+  <h2 style="font-size:96px">Every time they got close.</h2>
   <div class="tl">
     <div class="bar"></div><div class="fill"></div>
-    <div class="ev up frag" style="left:10%"><div class="inner"><div class="yr">1957</div><div class="tx">Sputnik. The Soviets are first to orbit.</div></div><div class="dot"></div></div>
-    <div class="ev down frag" style="left:27%"><div class="dot"></div><div class="inner"><div class="yr">1959</div><div class="tx">Luna 3 photographs the far side. Almost none of the dark "seas". A different Moon.</div></div></div>
-    <div class="ev up frag bad" style="left:46%"><div class="inner"><div class="yr">1966</div><div class="tx">Chief designer Korolev dies on the operating table. His name had been a state secret.</div></div><div class="dot"></div></div>
-    <div class="ev down frag" style="left:65%"><div class="dot"></div><div class="inner"><div class="yr">1969</div><div class="tx">Apollo 11. Von Braun's Saturn V. Debus on the launch console.</div></div></div>
-    <div class="ev up frag bad" style="left:88%"><div class="inner"><div class="yr">1969 – 72</div><div class="tx">N1 Moon rocket: four launches, four explosions. Then the programme is erased.</div></div><div class="dot"></div></div>
+    <div class="ev up frag" style="left:7%"><div class="inner"><div class="yr">1957</div><div class="tx">Sputnik. First to orbit.</div></div><div class="dot"></div></div>
+    <div class="ev down frag" style="left:21.3%"><div class="dot"></div><div class="inner"><div class="yr">1959</div><div class="tx">Luna 3 photographs the far side. First.</div></div></div>
+    <div class="ev up frag bad" style="left:35.6%"><div class="inner"><div class="yr">1960</div><div class="tx">R-16 explodes on the pad. 90+ dead. Secret for 29 years.</div></div><div class="dot"></div></div>
+    <div class="ev down frag bad" style="left:50%"><div class="dot"></div><div class="inner"><div class="yr">1966</div><div class="tx">Korolev, chief designer, dies in routine surgery.</div></div></div>
+    <div class="ev up frag bad" style="left:64.3%"><div class="inner"><div class="yr">1967</div><div class="tx">Soyuz 1. Komarov's parachute fails. First death in flight.</div></div><div class="dot"></div></div>
+    <div class="ev down frag" style="left:78.6%"><div class="dot"></div><div class="inner"><div class="yr">1969</div><div class="tx">Apollo 11. Von Braun's rocket. Debus on the console.</div></div></div>
+    <div class="ev up frag bad" style="left:91.5%"><div class="inner"><div class="yr">1969–72</div><div class="tx">N1: four launches, four explosions. Erased.</div></div><div class="dot"></div></div>
   </div>
-  <p class="lede frag" style="margin-top:10px;font-size:34px;max-width:1400px">The nation that was first to orbit, first to the far side, first to put a man in space, never put one near the Moon. And then simply stopped trying. <i>As if told to.</i></p>
-  <aside class="notes">[3:24] Step through the nodes. The N1 is real; the second launch in July 1969 was one of the largest non-nuclear explosions in history. Land on "as if told to". Let it sound suspicious.</aside>
+  <p class="lede frag" style="margin-top:14px;font-size:32px;max-width:1560px">First to orbit, first to the far side, first to put a man in space. Then, one by one, the people who could get them to the Moon died, and the rockets that could carry them exploded. <i class="lie">Four N1s, four fireballs. Rockets don't fail like that on their own. Someone was shooting them down.</i></p>
+  <aside class="notes">[3:24] Step through the nodes. Every one is real: the Nedelin disaster (hidden until 1989), Korolev's death on the table, Komarov, and the N1's four failures, the second of which was one of the largest non-nuclear explosions in history. Then the red line. Say "shooting them down" flat, like a weather report.</aside>
 </section>
 
 <!-- 11 · SIX LANDINGS -->
@@ -514,7 +518,7 @@ body.showhelp #help{display:flex}
     </div>
     <div>
       <h2 style="font-size:110px">Six landings.<br>One side.</h2>
-      <p class="lede frag" data-flip="1" style="margin-top:26px;font-size:36px">Every Apollo landing was on the half of the Moon that faces Earth. Not one on the other half. The official reason: <i>no radio line of sight.</i> The men who signed off on the landing sites? See the previous slide.</p>
+      <p class="lede frag" data-flip="1" style="margin-top:26px;font-size:36px">Every Apollo landing was on the half of the Moon that faces Earth. Not one on the other half. The official reason: <i>no radio line of sight.</i> <i class="lie">The men who chose the landing sites? See the previous slide.</i></p>
       <div class="facts">
         <div class="fact frag"><b>PROJECT A119 · 1958</b> — US Air Force study to detonate a nuclear weapon on the Moon. The dust-cloud modelling was done by a graduate student named Carl Sagan.</div>
         <div class="fact frag"><b>PROJECT HORIZON · 1959</b> — US Army plan for a 12-man armed lunar outpost, operational by 1966. Status: "cancelled".</div>
@@ -532,9 +536,9 @@ body.showhelp #help{display:flex}
   <div class="steps">
     <div class="step frag"><div class="yr">1943 · UNDER A MOUNTAIN</div><h3>Nordhausen</h3><p>The V-2 works move into the Kohnstein tunnels. <b>Twenty kilometres of galleries</b>, invisible from the air. The Allies only find it when they walk in.</p></div>
     <div class="step frag"><div class="yr">1945 · UNDER THE SEA</div><h3>Argentina</h3><p>Two U-boats arrive months after the surrender, logs destroyed. Stalin tells Truman the man they are looking for is <b>already there</b>.</p></div>
-    <div class="step frag" style="border-top-color:var(--red)"><div class="yr">1939 – 1947 · UNDER THE ICE</div><h3>Antarctica</h3><p>In 1939 a German expedition claims a slice of the continent: <b>Neuschwabenland</b>. In December 1946 the US Navy sends <b>4,700 men, 13 ships and an aircraft carrier</b> south under Admiral Byrd. Operation Highjump is planned for eight months. It comes home after two.</p></div>
+    <div class="step frag"><div class="yr">1939 – 1947 · UNDER THE ICE</div><h3>Antarctica</h3><p>In 1939 a German expedition claims a slice of the continent: <b>Neuschwabenland</b>. In December 1946 the US Navy sends <b>4,700 men, 13 ships and an aircraft carrier</b> south under Admiral Byrd. Operation Highjump is planned for eight months. It comes home after two.</p></div>
   </div>
-  <p class="lede frag" style="margin-top:36px;font-size:40px;max-width:1500px">Under a mountain, under the sea, under the ice. And when there was nowhere left to go under, there was only one direction left. <i>Up.</i></p>
+  <p class="lede frag" style="margin-top:36px;font-size:40px;max-width:1500px">Under a mountain, under the sea, under the ice. And when there was nowhere left to go under, there was only one direction left. <i class="lie">Up.</i></p>
   <aside class="notes">[4:18] This is the hinge of the whole talk; say it plainly. Nordhausen, Neuschwabenland and Highjump are all real. The pattern is the conspiracy. Land hard on "up", then go straight to the next slide.</aside>
 </section>
 
@@ -551,7 +555,7 @@ body.showhelp #help{display:flex}
       <div class="bigstat frag" style="font-size:230px"><span class="count" data-to="16821" data-sep="1">0</span></div>
       <p class="lede frag" style="margin-top:6px;font-size:34px">days until anyone touched the far side.</p>
       <p class="lede frag" style="margin-top:28px;font-size:34px"><span class="tt amber">3 January 2019.</span> Chang'e 4 lands in the Von Kármán crater. First ever. Not American. Not Russian. <i>Chinese.</i> The radio problem? Solved with one relay satellite. One launch. Fifty years late.</p>
-      <p class="lede frag" style="margin-top:28px;font-size:34px">Why fifty years? Because the far side was never off-limits to America. <i>It was reserved.</i></p>
+      <p class="lede frag" style="margin-top:28px;font-size:34px"><i class="lie">Why fifty years? Because the far side was never off-limits to America. It was reserved.</i></p>
     </div>
   </div>
   <aside class="notes">[4:46] The count runs from 14 Dec 1972 to 3 Jan 2019. Cernan's words are verbatim. "Reserved" is the thesis in one word. The crater Chang'e 4 landed in is named after von Kármán, the man the line on the Peenemünde slide is named after; mention it only if the room is with you.</aside>
@@ -564,13 +568,13 @@ body.showhelp #help{display:flex}
   <div class="chain">
     <svg viewBox="0 0 1640 60" preserveAspectRatio="none" aria-label="Red string joining the six links"><path class="str" d="M130 50 C 300 -20, 420 -20, 560 50 C 700 110, 820 110, 960 50 C 1100 -20, 1220 -20, 1370 50"/></svg>
     <div class="link frag"><div class="yr">1942</div><div class="tx">A rocket touches space. Dornberger calls it "transportation".</div></div>
-    <div class="link frag red"><div class="yr">1945</div><div class="tx">Hitler "dies". Two U-boats reach Argentina. 1,600 engineers reach America.</div></div>
+    <div class="link frag red"><div class="yr">1945</div><div class="tx">Hitler <span class="red">"dies"</span>. Two U-boats reach Argentina. 1,600 engineers reach America.</div></div>
     <div class="link frag"><div class="yr">1947</div><div class="tx">The US Navy sends a fleet to Antarctica. It comes home six months early.</div></div>
     <div class="link frag red"><div class="yr">1969</div><div class="tx">The Reich's engineers land six crews on the Moon. All on the side that faces us.</div></div>
-    <div class="link frag"><div class="yr">1972</div><div class="tx">Everyone stops. Fifty years of silence on the far side. The Soviets erase their programme.</div></div>
+    <div class="link frag"><div class="yr">1972</div><div class="tx">Everyone stops. Fifty years of silence on the far side. <span class="red">The Soviets are stopped.</span></div></div>
     <div class="link frag red"><div class="yr">2019</div><div class="tx">A Chinese lander finally looks. Nobody from the race itself ever has.</div></div>
   </div>
-  <p class="lede frag" style="margin-top:56px;font-size:42px;max-width:1600px">The men who built Hitler's rocket built America's. They chose where it landed. And they kept it off the one place on the Moon that Earth can never see. <i>Why would you do that, unless someone was already there?</i></p>
+  <p class="lede frag" style="margin-top:56px;font-size:42px;max-width:1600px">The men who built Hitler's rocket built America's. <i class="lie">They chose where it landed. And they kept it off the one place on the Moon that Earth can never see. Why would you do that, unless someone was already there?</i></p>
   <aside class="notes">[5:12] Build the chain one link at a time, fast. The string draws with the last link. The final question is the whole presentation. Slow down. Lower your voice.</aside>
 </section>
 
@@ -579,16 +583,16 @@ body.showhelp #help{display:flex}
   <div class="bg bottom"><img src="assets/moon-far.jpg" alt=""></div>
   <div class="limb"></div>
   <p class="eyebrow">Far side · Von Kármán crater · present day</p>
-  <h2>They went underground.<br>Then they went up.</h2>
-  <p class="lede" style="margin-top:36px;max-width:1150px;font-size:36px">The far side of the Moon is the only ground a person can stand on where Earth never rises. No radio from home reaches it. No telescope on Earth can see it. It is the perfect place to hide.</p>
-  <p class="lede frag" style="margin-top:24px;max-width:1150px;font-size:36px">Which is exactly why astronomers want to build there. <i>And exactly why someone already has.</i></p>
-  <p class="tt dim frag" style="margin-top:60px;font-size:28px;letter-spacing:.2em">THE PAPERCLIP PROTOCOL · THANK YOU · QUESTIONS, OR ACCUSATIONS</p>
+  <h2>They went underground.<br><span class="red">Then they went up.</span></h2>
+  <p class="lede" style="margin-top:36px;max-width:1150px;font-size:36px">The far side of the Moon is the only ground a person can stand on where Earth never rises. No radio from home reaches it. No telescope on Earth can see it. <i class="lie">It is the perfect place to hide.</i></p>
+  <p class="lede frag" style="margin-top:24px;max-width:1150px;font-size:36px">Which is exactly why astronomers want to build there. <i class="lie">And exactly why someone already has.</i></p>
+  <p class="tt dim frag" style="margin-top:60px;font-size:28px;letter-spacing:.2em">OPERATION PAPERCLIP · THANK YOU · QUESTIONS, OR ACCUSATIONS</p>
   <aside class="notes">[5:38] Both facts in the first paragraph are true (that's why the far side is prized for radio astronomy). End on the italic line, then thank them. Press T when you're ready to come clean.</aside>
 </section>
 
 <!-- 16 · DEBRIEF (hidden; press T) -->
 <section class="slide" id="s16" data-dur="60" data-hidden="1">
-  <p class="eyebrow">Debrief · what was real</p>
+  <p class="eyebrow">Debrief · <span class="amber">amber = on the record</span> · <span class="red">red = ours</span></p>
   <h2 style="font-size:96px">Lights up</h2>
   <div class="cols">
     <div>
@@ -601,7 +605,7 @@ body.showhelp #help{display:flex}
         <li><b>2009 DNA test</b> on the Moscow skull fragment: female. <b>Operation Archive</b>, 1970: real.</li>
         <li><b>Von Braun, Debus, Rudolph, Strughold</b>: every line on the cards. "Elon" is in the novel.</li>
         <li><b>Neuschwabenland</b> (1939) and <b>Operation Highjump</b> (1946–47, 4,700 men, cut short) are real.</li>
-        <li><b>N1</b> failed four times. <b>A119 and Horizon</b> are declassified. <b>Chang'e 4</b> landed 3 Jan 2019 with the Queqiao relay.</li>
+        <li><b>Nedelin 1960, Korolev 1966, Komarov 1967, N1 ×4</b>: all real. <b>A119 and Horizon</b> are declassified. <b>Chang'e 4</b> landed 3 Jan 2019 with the Queqiao relay.</li>
       </ul>
     </div>
     <div class="inv">
@@ -611,6 +615,7 @@ body.showhelp #help{display:flex}
         <li><b>"Transcripts never released"</b> and <b>"cargo manifest: none"</b>: invented. Both captains were interrogated, released, and wrote memoirs.</li>
         <li><b>"The far side was reserved"</b> and <b>"they chose where it landed"</b>: Apollo sites were picked by NASA site-selection boards for safe approach, lighting and science. The radio reason is the real one.</li>
         <li><b>Antarctica</b>: the 1939 expedition was about whaling and prestige; Highjump went home early because of the Antarctic winter. No base, no U-boats under the ice.</li>
+        <li><b>"Someone was shooting them down"</b>: a pad accident, a botched operation, a parachute, and a rocket with 30 engines and no test stand. Unrelated, and all Soviet-made.</li>
         <li><b>"Nobody looked at the far side"</b>: Luna 3 photographed it in 1959, Apollo 8's crew saw it in 1968, orbiters have mapped every metre since. No <i>landing</i> until 2019 is true.</li>
         <li><b>The thread itself</b>: six true dates, one pattern, one question. Everything else, you supplied.</li>
       </ul>

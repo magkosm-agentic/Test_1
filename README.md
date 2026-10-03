@@ -1,4 +1,4 @@
-# The Paperclip Protocol
+# Operation Paperclip
 
 A self-contained animated slide deck for a conspiracy-night presentation: five and a half minutes
 from the first V-2 flight at Peenemünde to the far side of the Moon. Every date in it is real;
@@ -24,11 +24,10 @@ The clock in the bottom-right starts on your first advance and turns red past si
 
 ## Photos
 
-The deck references sixteen historical photographs under `assets/` (portraits of the cast, the V-2
-launch, the Mittelwerk tunnels, the Moon's two faces, and so on). They are not in the repository:
-`assets/IMAGES.md` lists each file name, the exact Wikimedia Commons image to download for it, and
-its licence. Any slot whose file is missing renders as a labelled "archive photo, not on file" card,
-so the deck presents cleanly with none, some, or all of them in place.
+The deck uses sixteen historical photographs under `assets/`, all public domain or Bundesarchiv
+CC BY-SA 3.0 DE, downscaled for presentation. `assets/IMAGES.md` lists each file, its Wikimedia
+Commons source and its licence. Any slot whose file is missing renders as a labelled "archive photo,
+not on file" card, so the deck presents cleanly with a partial set.
 
 ## Structure
 
@@ -41,7 +40,7 @@ so the deck presents cleanly with none, some, or all of them in place.
 7. The skull: the 2009 DNA result and Operation Archive
 8. Paperclip: "They didn't lose the space race. They ran it."
 9. The novel: "Elon"
-10. The race: Sputnik to the N1
+10. The race: every time the Soviets got close, something broke
 11. Six landings, one side: Apollo, Project A119, Project Horizon
 12. Underground: Nordhausen, Argentina, Antarctica, and then up
 13. December 1972 to January 2019: 16,821 days, "it was reserved"
@@ -49,6 +48,6 @@ so the deck presents cleanly with none, some, or all of them in place.
 15. They went underground. Then they went up.
 16. Debrief (hidden; press `T`)
 
-Edit the text directly in the HTML. Each slide is a `<section class="slide">`; anything with
+Colour rule: amber marks things on the record, red marks the claims we made up. Edit the text directly in the HTML. Each slide is a `<section class="slide">`; anything with
 `class="frag"` reveals on the next keypress; `data-dur` is the slide's autoplay length in seconds;
 the `<aside class="notes">` is what the `N` panel shows.
