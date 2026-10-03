@@ -125,7 +125,10 @@ h2{font-size:130px}
 #s1.active h1 span:nth-child(3) i{transform:none;transition-delay:.5s}
 #s1 .sub{margin-top:36px;font-size:36px;color:var(--paper);max-width:1300px;line-height:1.3}
 #s1 .sub i{color:var(--amber)}
-#s1 .stamp{position:absolute;right:160px;top:220px;font-size:72px}
+#s1 .stamp{position:absolute;right:160px;bottom:150px;font-size:60px}
+#s1 .stamp.conf{left:170px;right:auto;bottom:auto;top:330px;font-size:170px;letter-spacing:.12em;border-width:14px;border-radius:24px;padding:8px 60px 0;transform:rotate(-11deg);box-shadow:inset 0 0 60px rgba(10,12,18,.6),0 30px 60px rgba(0,0,0,.5)}
+#s1.active .stamp.conf{animation:slam-big .6s cubic-bezier(.2,1.4,.3,1) 1.5s forwards}
+@keyframes slam-big{0%{opacity:0;transform:rotate(-11deg) scale(3.4)}55%{opacity:.95;transform:rotate(-11deg) scale(.94)}100%{opacity:.82;transform:rotate(-11deg) scale(1)}}
 #s1 .rule{width:0;height:5px;background:var(--amber);margin:40px 0 0;transition:width 1.4s ease .9s}
 #s1.active .rule{width:520px}
 
@@ -135,8 +138,8 @@ h2{font-size:130px}
 .vcard .yr{font-family:var(--type);font-size:22px;letter-spacing:.16em;color:var(--amber)}
 .vcard .nm{font-family:var(--display);font-weight:900;font-size:104px;line-height:1;text-transform:uppercase;margin:6px 0 14px;white-space:nowrap}
 .vv{position:relative;display:inline-block}
-.vv svg{position:absolute;left:-32%;top:-18%;width:164%;height:136%;overflow:visible;pointer-events:none}
-.vv path{fill:none;stroke:var(--red);stroke-width:7;stroke-linecap:round;stroke-dasharray:520;stroke-dashoffset:520;filter:drop-shadow(0 0 6px rgba(201,53,44,.5))}
+.vv svg{position:absolute;left:-114%;top:-86%;width:328%;height:272%;overflow:visible;pointer-events:none}
+.vv path{fill:none;stroke:var(--red);stroke-width:5;stroke-linecap:round;stroke-dasharray:520;stroke-dashoffset:520;filter:drop-shadow(0 0 6px rgba(201,53,44,.5))}
 .vv.on path{animation:draw-v .9s ease-out forwards}
 .vv.on svg:nth-of-type(2) path{animation-delay:.5s}
 @keyframes draw-v{to{stroke-dashoffset:0}}
@@ -318,6 +321,7 @@ body.showhelp #help{display:flex}
   <div class="rule"></div>
   <p class="sub">The Third Reich did not lose the space race. <i class="lie">It went underground.</i></p>
   <div class="stamp auto">Conspiracy night</div>
+  <div class="stamp conf">Confidential</div>
   <aside class="notes">[0:00] Open on the title. Let the stamp land. "Tonight's story starts with a rocket, ends on the far side of the Moon, and every date in it is real. The conclusion is mine. You'll see where the facts stop and I start."</aside>
 </section>
 
